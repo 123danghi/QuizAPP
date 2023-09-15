@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Quiz App Feedback</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</head>
+<Style>
+    .btn:hover {
+        background-color: #e57538;
+    }
+
+    input {
+        border-radius: 15px;
+        border-color: #e57538;
+    }
+
+    input:hover {
+        border-color: #4dcd44;
+    }
+
+    label {
+        margin-right: 1%;
+        margin-left: -5%;
+        font-size: 20px;
+        color: #923402;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .input-group {
+        margin: 5% 40%;
+    }
+
+    textarea {
+        border-radius: 15px;
+        border-color: #e57538;
+    }
+
+    textarea:hover {
+        border-color: #4dcd44;
+    }
+</Style>
+
+<body>
+    <div class="container">
+        <center>
+            <h1 style="color: #e57538;padding-top: 7%;font-weight: 900;">Feedback!</h1>
+        </center>
+        <center>
+            <form name="form" method="POST">
+                <div class="input-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" style="margin-left: 2%;padding: 0% 5%;" autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label for="msg">Message:</label>
+                    <input name="Feedback" id="Feedback" style="padding: 0% 5% 8% ;"></input>
+
+                </div>
+                <center>
+                    <button type="submit" class="btn" style="border-color: #923402;width:40% ;margin-top: 0%;border-radius: 20px;" value="submit">Submit
+                    </button>
+                </center>
+            </form>
+        </center>
+       
+    </div>
+    <center>
+        <div class="card-footer" style="font-size: x-small; margin-top: 5%;">
+            All Rights are Reserved. Made with 💗 by <a href="https://www.linkedin.com/in/abhinav-k-64304618b/">abhinav
+                kumar</a>
+        </div>
+    </center>
+</body>
+
+<script type="text/javascript">
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzHAWLJ0uK4WGSEk1-8QRL5RpKMh79X6q620diWlyBgakCUj8QOfFu0jIDznZBTYj9w/exec'
+    const form = document.forms['google-sheet']
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => alert("Thanks for Contacting us..!"))
+            .catch(error => console.error('Error!', error.message))
+    })
+</script>
+</html>
